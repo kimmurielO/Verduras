@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./estilo.css">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
 		while($mostrar=mysqli_fetch_array($respuesta1)){
 	?>
 
-	<input type="checkbox" name="check_list[]"  value="<?php echo $mostrar['nombre'] ?>" <?php echo ($mostrar['checked'] == 1) ? 'checked="checked"' : ''; ?>>
+	<input type="checkbox" name="check_list[]" value="<?php echo $mostrar['nombre'] ?>" <?php echo ($mostrar['checked'] == 1) ? 'checked="checked"' : ''; ?>>
   	<label> <?php echo $mostrar['nombre'] ?> </label><br>
 
 	<?php

@@ -1,0 +1,4 @@
+/* Coincide con cualquier checked/selected radio, checkbox, u option */
+ input[type=checkbox]:checked + label {
+	text-decoration:line-through;
+}
