@@ -20,22 +20,12 @@
 
 ?>
 
-<!--<form action="verduras.php" method=POST>
-  <input type="checkbox" name="check_list[]" value="Lechuga" <?php echo ($rows[0] == 1) ? 'checked="checked"' : ''; ?> >
-  <label> Lechuga </label><br>
-  <input type="checkbox" name="check_list[]" value="Repollo" <?php echo ($rows2[0] == 1) ? 'checked="checked"' : ''; ?>>
-  <label> Repollo</label><br>
-  <input type="checkbox" name="check_list[]" value="Lombarda" <?php echo ($rows3[0] == 1) ? 'checked="checked"' : ''; ?>>
-  <label> Lombarda</label><br><br>
-  <input type="submit" name="submit" value="Enviar">
-</form>-->
-
 <form action="verduras.php" method="POST">
 	<?php
-		$var_sel4 = "SELECT * FROM verduras";
-		$pru4 = mysqli_query($obj_conexion, $var_sel4);
+		$var_sel1 = "SELECT * FROM verduras";
+		$respuesta1 = mysqli_query($obj_conexion, $var_sel1);
 
-		while($mostrar=mysqli_fetch_array($pru4)){
+		while($mostrar=mysqli_fetch_array($respuesta1)){
 	?>
 
 	<input type="checkbox" name="check_list[]"  value="<?php echo $mostrar['nombre'] ?>" <?php echo ($mostrar['checked'] == 1) ? 'checked="checked"' : ''; ?>>
@@ -50,15 +40,6 @@
 
 <?php
 
-	//$asistencias['id'];
-
-	/*$cons_usuario="root";
-    $cons_contra="";
-    $cons_base_datos="listaVerd";
-    $cons_equipo="localhost";
-
-    $obj_conexion = mysqli_connect($cons_equipo,$cons_usuario,$cons_contra,$cons_base_datos);
-*/
     if(isset($_POST['submit'])){//Para ejecutar PHP script en Submit
     	$control++;
     	$var_cons1 = "UPDATE verduras SET checked=false";
@@ -86,8 +67,6 @@
 		$control=0;
 		header('Location: '.$url);
 	}
-
-	//header( "refresh:5; url=verduras.php" );
 
 ?>
 
